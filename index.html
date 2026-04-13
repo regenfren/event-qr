@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<title>Event RSVP — EN / FR</title>
+<style>
+  :root {
+    --bg: #0b0b10;
+    --card: #15161d;
+    --card-border: #2a2b36;
+    --text: #f4f4f6;
+    --muted: #a0a2ad;
+    --accent: #7c5cff;
+    --accent-text: #ffffff;
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #f6f6f8;
+      --card: #ffffff;
+      --card-border: #e4e5ea;
+      --text: #0b0b10;
+      --muted: #5a5c66;
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font: 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, sans-serif;
+    min-height: 100dvh;
+    padding: max(env(safe-area-inset-top), 20px) 20px max(env(safe-area-inset-bottom), 24px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  header {
+    max-width: 560px;
+    width: 100%;
+    text-align: center;
+    margin: 8px 0 20px;
+  }
+  h1 {
+    font-size: clamp(22px, 6vw, 30px);
+    margin: 0 0 6px;
+    letter-spacing: -0.01em;
+  }
+  header p {
+    color: var(--muted);
+    margin: 0;
+    font-size: 15px;
+  }
+  main {
+    width: 100%;
+    max-width: 560px;
+    display: grid;
+    gap: 18px;
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 18px;
+    padding: 22px 22px 24px;
+    text-align: center;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.06);
+  }
+  .flag {
+    font-size: 34px;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .lang {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+  .title {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0 0 16px;
+  }
+  .qr {
+    background: #fff;
+    border-radius: 14px;
+    padding: 14px;
+    display: inline-block;
+    width: min(78vw, 300px);
+    aspect-ratio: 1 / 1;
+  }
+  .qr svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    image-rendering: pixelated;
+    shape-rendering: crispEdges;
+  }
+  .hint {
+    color: var(--muted);
+    font-size: 14px;
+    margin: 14px 0 16px;
+  }
+  .btn {
+    display: inline-block;
+    width: 100%;
+    padding: 14px 18px;
+    background: var(--accent);
+    color: var(--accent-text);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 12px;
+    min-height: 48px;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .btn:active { transform: translateY(1px); }
+  footer {
+    margin-top: 24px;
+    color: var(--muted);
+    font-size: 12px;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+  <header>
+    <h1>RSVP</h1>
+    <p>Scan the QR code for your language / Scannez le code QR pour votre langue</p>
+  </header>
+
+  <main>
+    <section class="card" aria-labelledby="en-title">
+      <div class="flag" aria-hidden="true">🇬🇧</div>
+      <div class="lang">English</div>
+      <h2 id="en-title" class="title">English Event</h2>
+      <div class="qr">
+        <object type="image/svg+xml" data="qr-en.svg" aria-label="QR code for the English event">
+          <img src="qr-en.svg" alt="QR code for the English event">
+        </object>
+      </div>
+      <p class="hint">Point your phone camera at the code</p>
+      <a class="btn" href="https://luma.com/5y1l6lwh" target="_blank" rel="noopener">Open in Luma →</a>
+    </section>
+
+    <section class="card" aria-labelledby="fr-title">
+      <div class="flag" aria-hidden="true">🇫🇷</div>
+      <div class="lang">Français</div>
+      <h2 id="fr-title" class="title">Événement en français</h2>
+      <div class="qr">
+        <object type="image/svg+xml" data="qr-fr.svg" aria-label="Code QR pour l'événement en français">
+          <img src="qr-fr.svg" alt="Code QR pour l'événement en français">
+        </object>
+      </div>
+      <p class="hint">Pointez l'appareil photo de votre téléphone vers le code</p>
+      <a class="btn" href="https://luma.com/7135sxt4" target="_blank" rel="noopener">Ouvrir dans Luma →</a>
+    </section>
+  </main>
+
+  <footer>Hosted on GitHub Pages</footer>
+</body>
+</html>
